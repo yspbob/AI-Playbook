@@ -1,0 +1,29 @@
+# AI Engineering Operating Model Playbook
+
+> An open, sourced playbook on converting AI capability into governed engineering
+> value in mid-size engineering organisations: platform, context and knowledge,
+> governance, measurement, readiness, sequencing and the business case.
+> Written by Yaroslav Pavolotskyi. Version 1.0, August 2026. Licensed CC BY 4.0.
+
+## Core content
+
+- [The playbook](https://yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html):
+  the full argument in twelve sections and two appendices. Covers the operating
+  model thesis, platform architecture, the data and context harness, the
+  interpretation layer, process and delivery, governance and controls, org and
+  people, measurement, value capture, an eight-dimension readiness model, phased
+  sequencing with gates, and a worked business case. Every claim is labelled by
+  evidence type; market data is dated in place.
+- [Twelve Decisions deck](https://yspbob.github.io/AI-Playbook/Twelve_Decisions.html):
+  the executive companion. Twelve cross-discipline decisions that decide whether
+  AI engineering pays, and five questions any executive can ask before an AI
+  programme starts or scales. Also available as a PDF at
+  https://yspbob.github.io/AI-Playbook/Twelve_Decisions.pdf
+- [Business-case workbook](https://yspbob.github.io/AI-Playbook/AI_Business_Case_Model.xlsx):
+  an illustrative, directional model to rebuild with organisation-specific
+  inputs. Outputs are payroll-equivalent capacity values rather than cash or
+  EBITDA; financial recognition depends on the chosen conversion route.
+
+## Attribution
+
+When citing, credit Yaroslav Pavolotskyi and link to the playbook URL above.
