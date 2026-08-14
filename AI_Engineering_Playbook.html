@@ -37,12 +37,12 @@ main{flex:1;min-width:0;max-width:936px;padding:58px 78px 100px 72px;}
 main p{margin:12px 0;}
 h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--accent);}
 h1{font-size:44px;line-height:1.06;margin:0 0 14px;letter-spacing:-.02em;}
-h1:not(.part)::before{content:"";display:block;width:88px;height:8px;background:var(--gold);margin-bottom:34px;}
+h1::before{content:"";display:block;width:88px;height:8px;background:var(--gold);margin-bottom:34px;}
 .docmeta{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 40px;}
 .docmeta a{color:var(--gold);text-decoration-color:var(--gold);}
-h1.part{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:64px 0 0;padding:26px 0 0;border-top:1px solid var(--line);}
-hr+h1.part{border-top:0;padding-top:0;margin-top:10px;}
-h1.part+h2{margin-top:18px;}
+div.part{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:64px 0 0;padding:26px 0 0;border-top:1px solid var(--line);}
+hr+div.part{border-top:0;padding-top:0;margin-top:10px;}
+div.part+h2{margin-top:18px;}
 h2+h3{margin-top:10px;}
 h2{font-size:31px;line-height:1.15;margin:56px 0 12px;letter-spacing:-.01em;scroll-margin-top:24px;}
 h2::before{content:"";display:block;width:46px;height:4px;background:var(--gold);margin-bottom:14px;}
@@ -98,7 +98,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 @media(max-width:960px){
  .toc-nav{display:none;}
  main{padding:34px 22px 90px;}
- h1{font-size:32px;}h1:not(.part)::before{width:64px;height:6px;margin-bottom:24px;}
+ h1{font-size:32px;}h1::before{width:64px;height:6px;margin-bottom:24px;}
  h2{font-size:24px;margin-top:46px;}h3{font-size:18.5px;}
  p,li{font-size:15.5px;}
  #fab{display:block;}
@@ -108,7 +108,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
  main{max-width:none;padding:0;}body{background:#fff;font-size:12.5px;}
  details{border:none;background:none;margin:8px 0;}details>summary{font-weight:700;color:var(--accent);}details>summary::before{content:"";}
  details:not([open])>*:not(summary){display:block !important;}
- h1:not(.part)::before,h2::before{display:none;}a{color:var(--ink);text-decoration:none;}}
+ h1::before,h2::before{display:none;}a{color:var(--ink);text-decoration:none;}}
 </style></head>
 <body><div id="pbar"></div><div class="layout">
 <nav class="toc-nav"><div class="toc-head">CONTENTS</div><div class="toc">
@@ -217,7 +217,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 
 </figure></p>
 <hr />
-<h1 class="part" id="part-i-frame">Part I: Frame</h1>
+<div class="part" id="part-i-frame">Part I: Frame</div>
 <h2 id="1-thesis-operating-principles">1. Thesis &amp; Operating Principles</h2>
 <h3 id="the-evidence-mid-2026">The evidence: mid-2026</h3>
 <p>I start with the gap between task-level acceleration and organisation-level value.</p>
@@ -291,7 +291,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <li><a href="https://cepr.org/voxeu/columns/writing-code-versus-shipping-code-productivity-effects-across-generations-ai-coding" target="_blank" rel="noopener noreferrer">Demirer, Musolff and Yang, <em>Writing Code vs. Shipping Code</em> (2026)</a>: 100,000+ GitHub developers; coding activity +180%, releases +30%. Matched event study rather than a randomised trial; NBER working paper 35275, not peer-reviewed; telemetry supplied by Microsoft</li>
 </ul>
 </details>
-<h1 class="part" id="part-ii-the-dimensions-in-depth-the-build">Part II: The dimensions in depth (the build)</h1>
+<div class="part" id="part-ii-the-dimensions-in-depth-the-build">Part II: The dimensions in depth (the build)</div>
 <h2 id="2-infrastructure-platform">2. Infrastructure &amp; platform</h2>
 <p><span class="tag tag-real">Realisation, Problem 1 (assurance bottleneck)</span></p>
 <blockquote>
@@ -1165,7 +1165,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </ul>
 </details>
 <hr />
-<h1 class="part" id="part-iii-assess-run-price">Part III: Assess, run &amp; price</h1>
+<div class="part" id="part-iii-assess-run-price">Part III: Assess, run &amp; price</div>
 <h2 id="8-measurement">8. Measurement</h2>
 <p><span class="tag tag-cross">Cross-cutting</span></p>
 <blockquote>
@@ -1977,7 +1977,7 @@ if(location.hash){setTimeout(function(){openTo(location.hash);},120);}
 var heads=[],links={};
 function initNav(){
  document.querySelectorAll('.toc-nav a[href^=\"#\"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
- document.querySelectorAll('main h1[id],main h2[id]').forEach(function(h){if(links[h.id])heads.push(h);});
+ document.querySelectorAll('main h1[id],main div.part[id],main h2[id]').forEach(function(h){if(links[h.id])heads.push(h);});
 }
 var tick=false;
 function onScroll(){
