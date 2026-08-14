@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Twelve decisions that decide whether AI engineering pays</title>
+<meta name="description" content="Twelve decisions that decide whether AI engineering pays. The executive companion to the AI Engineering Operating Model Playbook.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Twelve decisions that decide whether AI engineering pays">
+<meta property="og:description" content="The executive companion to the AI Engineering Operating Model Playbook: twelve cross-discipline decisions, five questions that work as a gate.">
+<meta property="og:url" content="https://yspbob.github.io/AI-Playbook/Twelve_Decisions.html">
+<meta property="og:image" content="https://yspbob.github.io/AI-Playbook/og_deck.png">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<script id="deck" type="application/json">
+{
+  "playbookBase": "https://yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html",
+  "pages": [
+    {
+      "type": "cover",
+      "kicker": "A companion to the [[AI Engineering Operating Model Playbook]]",
+      "title": "Twelve decisions\nthat decide whether\nAI engineering pays",
+      "lede": "They run from platform architecture to organisation design to the business case. Most of them get made early, quietly, and by default.",
+      "footnote": "The dots above say what kind of claim each number is. The workbook behind the case is open, illustrative and directional rather than a full P&L, and the field notes are mine with names removed. Competent tool choice and implementation are assumed throughout and are not covered here. August 2026."
+    },
+    {
+      "type": "stat",
+      "count": "Why decisions",
+      "ref": "§8, §12",
+      "refSlug": "8-measurement",
+      "title": "Adoption is nearly\nuniversal. Measured\ngain is not.",
+      "figures": [
+        {
+          "number": "90%",
+          "label": "of developers use AI at work"
+        },
+        {
+          "number": "7.76%",
+          "label": "throughput gain across 400 companies"
+        },
+        {
+          "number": "39%",
+          "label": "of companies report any EBIT impact at all"
+        }
+      ],
+      "lede": "Well-chosen, well-implemented tools still do not change a business on their own. The change comes from cross-discipline decisions, which often have no single owner.",
+      "lede2": "**Here are twelve worth making on purpose.**",
+      "evidence": "published",
+      "source": "DORA 2025; DX, Nov 2024 to Feb 2026; McKinsey 2025",
+      "footnote": "The 7.76% is pull-request throughput over the fifteen months to February 2026. Most organisations land between 5% and 15%."
+    },
+    {
+      "type": "map",
+      "count": "The twelve",
+      "ref": "§1 to §12",
+      "title": "The twelve, in the order they arrive.",
+      "groups": [
+        {
+          "name": "Frame",
+          "items": [
+            {
+              "n": "01",
+              "text": "Do you measure before you start?"
+            },
+            {
+              "n": "02",
+              "text": "Faster engineers, or faster delivery?"
+            }
+          ]
+        },
+        {
+          "name": "Build",
+          "items": [
+            {
+              "n": "03",
+              "text": "One paved route, or everyone finds their own way?"
+            },
+            {
+              "n": "04",
+              "text": "Does the agent see only code, or the thinking behind it?"
+            },
+            {
+              "n": "05",
+              "text": "Who decides the output is good enough, and when?"
+            }
+          ]
+        },
+        {
+          "name": "Run",
+          "items": [
+            {
+              "n": "06",
+              "text": "What can you see, cap and stop?"
+            },
+            {
+              "n": "07",
+              "text": "Train people to prompt, or to supervise?"
+            },
+            {
+              "n": "08",
+              "text": "What do you centralise, and what stays with the teams?"
+            },
+            {
+              "n": "09",
+              "text": "Who goes first, and on what?"
+            }
+          ]
+        },
+        {
+          "name": "Prove",
+          "items": [
+            {
+              "n": "10",
+              "text": "Where do freed hours go, and who signs?"
+            },
+            {
+              "n": "11",
+              "text": "What do you promise for year one?"
+            },
+            {
+              "n": "12",
+              "text": "What would make you stop?"
+            }
+          ]
+        }
+      ],
+      "footnote": "The playbook follows the build process and this deck the decision sequence, so the chapter order differs. Each page opens with the default; where one reads familiar, start there."
+    },
+    {
+      "type": "decision",
+      "count": "01 / 12",
+      "ref": "§8 Measurement, §11 Phase 1",
+      "refSlug": "8-measurement",
+      "title": "Do you measure\nbefore you start?",
+      "usually": "Run a pilot, measure afterwards, compare the result against how it felt.",
+      "instead": "Capture the baseline before the first licence is activated. It cannot be reconstructed later.",
+      "why": "AI value follows a J-curve: delivery dips before it climbs. DORA names that dip the **tuition cost** and warns that leaders who misread it as failure pull the funding. A baseline is what tells them apart.",
+      "evidence": "published",
+      "source": "DORA, The ROI of AI-assisted Software Development, 2026",
+      "footnote": "The cost is low: the metrics are ones §8 already asks for, and the baseline is each team's pre-onboarding period."
+    },
+    {
+      "type": "decision",
+      "count": "02 / 12",
+      "ref": "§5 Process & delivery",
+      "refSlug": "5-process-delivery",
+      "title": "Faster engineers,\nor faster delivery?",
+      "usually": "Usage leaderboards and acceptance rates, the numbers the tool supplies.",
+      "instead": "What reaches production, with quality on the same chart.",
+      "why": "Across 400 companies, AI usage rose **65%** while pull-request throughput rose **7.76%**. Writing is only the first step. Review, integration and coordination all sit downstream, and the gain has to survive them.",
+      "evidence": "published",
+      "source": "DX longitudinal study, Nov 2024 to Feb 2026",
+      "footnote": "7.76% counts merged pull requests, not what reached production, and nothing in the count separates rework from new work."
+    },
+    {
+      "type": "decision",
+      "count": "03 / 12",
+      "ref": "§2 Infrastructure & platform",
+      "refSlug": "2-infrastructure-platform",
+      "title": "One paved route, or\neveryone finds their own way?",
+      "usually": "Buy the licences and let local experiments follow.",
+      "instead": "One route through the plumbing, so the experiments are about the product.",
+      "why": "Where platform quality is low, AI adoption has a **negligible effect** on organisational performance. Where it is high, the effect is **strong and positive**.",
+      "evidence": "published",
+      "source": "DORA 2025, platform engineering capability",
+      "footnote": "The test is whether an engineer under deadline still takes the route. If their own way is quicker, the route is not good enough."
+    },
+    {
+      "type": "decision",
+      "count": "04 / 12",
+      "ref": "§3 Data & knowledge",
+      "refSlug": "3-data-knowledge-the-contextharness",
+      "title": "Does the agent see only code, or the thinking behind it?",
+      "usually": "The repository, and whatever rules files have accumulated around it.",
+      "instead": "The decisions, constraints and ownership the code does not record, assembled deliberately and kept current.",
+      "why": "One project in my portfolio planned its source-data and context work at roughly a quarter of the total effort. It ran closer to **60%**, which made it the largest single item in the build.",
+      "evidence": "firsthand",
+      "source": "anonymised",
+      "footnote": "A business case without the context work understates the cost."
+    },
+    {
+      "type": "decision",
+      "count": "05 / 12",
+      "ref": "§4 The interpretation layer",
+      "refSlug": "4-the-interpretation-layer",
+      "title": "Who decides the output\nis good enough, and when?",
+      "usually": "The reviewer decides, case by case, against their own read of what good looks like.",
+      "instead": "The standards written down, served to the agent before it works, and checked automatically after.",
+      "why": "Two-thirds of developers name output that is **almost right, but not quite** as their biggest frustration. Almost right is a judgement about whether something fits this estate, and an agent cannot make it without knowing what the estate has already decided.",
+      "evidence": "published",
+      "source": "Stack Overflow Developer Survey 2025",
+      "footnote": "The playbook calls this assembly a proposal, not yet proven in production. The entry rung is small: a rules file, an ADR set, and structural checks in CI."
+    },
+    {
+      "type": "decision",
+      "count": "06 / 12",
+      "ref": "§6 Governance & controls",
+      "refSlug": "6-governance-security-risk-controls",
+      "title": "What can you see, cap and stop?",
+      "usually": "A policy document, intended to work as a control.",
+      "instead": "A gateway every call passes through, with approved models behind it, a spend cap that has an exception path, and a kill-switch someone has tested.",
+      "why": "At one organisation, AI use was banned at group level. Every person I spoke to used it anyway. What the ban produced was **usage with no visibility, no telemetry and no control**. Even the money is hard to see: industry-wide, FinOps practitioners rank granular monitoring of AI spend as their top missing tool.",
+      "evidence": "firsthand",
+      "source": "anonymised; State of FinOps 2026",
+      "footnote": "A gateway does not stop someone determined to go around it. It reduces the reason to, which a ban cannot. What still goes around it tells you where the route falls short."
+    },
+    {
+      "type": "decision",
+      "count": "07 / 12",
+      "ref": "§7 Org, people & culture",
+      "refSlug": "7-org-people-culture",
+      "title": "Train people to prompt,\nor to supervise?",
+      "usually": "Prompt technique. How to ask the tool for a better answer.",
+      "instead": "Supervision. How to review generated work, when to reject it, and what must be verified rather than trusted.",
+      "why": "Goldman Sachs' CIO frames these as **management skills**: describe, delegate, supervise. He calls delegating to an agent you cannot supervise a recipe for disaster. Reviewing work you did not write, at volume, is a different skill from writing it.",
+      "evidence": "published",
+      "source": "Marco Argenti, CIO, Goldman Sachs, July 2025",
+      "footnote": "Prompting shapes how you ask. It does not set what the work should draw on, what it must satisfy, or how you would know it is done."
+    },
+    {
+      "type": "decision",
+      "count": "08 / 12",
+      "ref": "§7 Org, people & culture",
+      "refSlug": "7-org-people-culture",
+      "title": "What do you centralise,\nand what stays with the teams?",
+      "usually": "One AI team owns the tools, the standards and the rollout. Who owns the value is left open.",
+      "instead": "The team that builds the route answers for adoption. The teams that deliver own the outcome and book the value.",
+      "why": "One team should build the platform. Adoption can be seen from there. What the freed time turned into can only be seen where the work happens.",
+      "evidence": "reasoned",
+      "source": "follows from §9, where booking requires a named owner",
+      "footnote": "Low adoption points at the platform. High adoption with nothing booked points elsewhere. The split does not end the argument, it makes it answerable."
+    },
+    {
+      "type": "decision",
+      "count": "09 / 12",
+      "ref": "§11 Sequencing & roadmap",
+      "refSlug": "11-sequencing-roadmap",
+      "title": "Who goes first, and on what?",
+      "usually": "Whoever is keenest goes first, on whatever they are already doing.",
+      "instead": "Representative teams, on work that is frequent, easily checked, and contained if it goes wrong.",
+      "why": "A volunteer team on familiar work tells you what happens where everything already favours it. A representative team on checkable work tells you where it is actually useful, under conditions you set.",
+      "evidence": "judgement",
+      "source": "argued in §11 rather than measured",
+      "footnote": "Champions matter, and the strongest ones come from teams that did not ask for it. A win there is harder for a sceptic to dismiss."
+    },
+    {
+      "type": "decision",
+      "count": "10 / 12",
+      "ref": "§9 Value capture",
+      "refSlug": "9-value-capture",
+      "title": "Where do freed hours go,\nand who signs?",
+      "usually": "The hours go into whatever the teams were already doing, and that becomes the decision.",
+      "instead": "Pick the conversion route before the capacity is freed: throughput, cost-out, debt paydown, or time to market. Engineering proposes, the executive committee chooses, finance signs.",
+      "why": "Bain finds teams using AI assistants see gains of **10% to 15%**, and that the time saved is often not redirected toward higher-value work.",
+      "evidence": "published",
+      "source": "Bain, From Pilots to Payoff, 2025",
+      "footnote": "Bain's evidence is assistant-era, and agents free more time. The pull is familiar from the field: in a project I ran in 2017, time formally protected at 50% was squeezed to 10% by business pressure, and winning it back took effort each time."
+    },
+    {
+      "type": "decision",
+      "count": "11 / 12",
+      "ref": "§12 Business case",
+      "refSlug": "12-business-case-economics",
+      "title": "What do you promise\nfor year one?",
+      "usually": "Payback inside the first year, with licences standing in for the cost of the programme.",
+      "instead": "A J-curve with the dip in the budget from the start. Say which year you expect breakeven, and let the gates test it.",
+      "why": "The cost is a five-line stack: licences and tokens, the enabling team (where §3's context work lands), the platform, training, and instability. Waves spread it, so year one carries partial coverage against the full build cost.",
+      "evidence": "reasoned",
+      "source": "follows from §12, where the stack is built bottom-up",
+      "footnote": "The workbook works one example through at 300 engineers. Replace every input with your own before anyone quotes a number from it."
+    },
+    {
+      "type": "decision",
+      "count": "12 / 12",
+      "ref": "§10 Readiness, §11 Sequencing",
+      "refSlug": "10-readiness-model-8-dimensions",
+      "title": "What would make you stop?",
+      "usually": "The programme has a start date and a budget. The stopping decision gets made reactively, when money or patience runs out.",
+      "instead": "Gates at every phase and every wave, each with numbers to clear. A missed gate gets one of three answers agreed with the CFO in advance: hold, shrink, or kill.",
+      "why": "Gartner expects over **40%** of agentic AI projects to be cancelled by end-2027, on escalating costs, unclear business value or inadequate risk controls. All three show up at a gate while the programme is still cheap to change.",
+      "evidence": "published",
+      "source": "Gartner, June 2025",
+      "footnote": "A programme that cannot stop is not governed, it is funded. The harder half is knowing when not to stop: the classic failure is pulling funding at the bottom of the dip."
+    },
+    {
+      "type": "pattern",
+      "count": "The pattern",
+      "ref": "§1 Thesis",
+      "refSlug": "1-thesis-operating-principles",
+      "title": "One thing sits\nbehind all twelve.",
+      "lede": "None of them is a decision about the model. Every single one is a decision about the system the model lands in.",
+      "why": "DORA reaches the same conclusion from nearly 5,000 technology professionals: AI's primary role is an **amplifier**, magnifying an organisation's existing strengths and weaknesses. These twelve are how you decide which it meets.",
+      "lede2": "**A better model raises the ceiling. These twelve decide where under it you land.**",
+      "evidence": "published",
+      "source": "DORA 2025, State of AI-assisted Software Development",
+      "footnote": "DORA's finding cuts both ways: a struggling system gets its struggles amplified. §10's readiness matrix exists to find that out before the licences do."
+    },
+    {
+      "type": "questions",
+      "count": "What to ask",
+      "ref": "Five of the twelve",
+      "title": "If you can only\nask five.",
+      "questions": [
+        "Where is the baseline we captured before the first licence?",
+        "What happens to the bill if usage triples at renewal?",
+        "Who owns conversion of freed capacity, by name, and what did they book last quarter?",
+        "Which year do we expect breakeven, and are we on track for it?",
+        "What would make us stop?"
+      ],
+      "lede": "Asked once, they take a snapshot. Asked before each wave is approved, they work as a gate: a question without a credible answer gets a named owner and a date, and the wave waits.",
+      "footnote": "They are decisions 01, 06, 10, 11 and 12: the questions a CFO or COO can ask without knowing anything about engineering, and the ones a CTO should want asked."
+    },
+    {
+      "type": "end",
+      "kicker": "The full argument, and the workbook behind it",
+      "title": "The playbook and\nthe open workbook",
+      "lede": "The full argument behind each of the twelve, and an illustrative business case to rebuild with your own headcount and payroll. The workbook downloads from §12, so the assumptions arrive before the numbers.",
+      "why": "**Every claim is labelled by what kind of claim it is. That distinction is the difference between a business case and a hope.**",
+      "url": "yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html",
+      "footnote": "Written by Yaroslav Pavolotskyi, linkedin.com/in/yaroslavpavolotsky. Market data current as of August 2026 and dated in place, because all of it moves. Appendix A of the playbook carries the July 2026 market snapshot in full."
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --paper:#FCFAF6; --ink:#22262b; --navy:#1F3864; --gold:#B08A2E;
+  --mute:#6b6459; --grey:#A29B8E; --line:#E5DFD4;
+  --published:#1F3864; --reasoned:#B08A2E; --modelled:#3E6E8E; --firsthand:#4A7A55; --judgement:#8A4B3C;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#ded9d0;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+#stage{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 0 60px}
+.page{width:1080px;height:1350px;background:var(--paper);position:relative;
+  padding:92px 92px 88px;display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 6px 26px rgba(40,34,24,.18);flex:none}
+.top{display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:2px solid var(--line);padding-bottom:20px;margin-bottom:54px}
+.count{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--navy)}
+.ref,a.ref{font-size:21px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+h1{font-family:var(--serif);font-size:88px;line-height:1.08;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+h2{font-family:var(--serif);font-size:64px;line-height:1.13;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+h3{font-family:var(--serif);font-size:44px;line-height:1.18;font-weight:600;color:var(--navy)}
+p{font-size:32px;line-height:1.5}
+.lede{font-size:36px;line-height:1.46}
+.mute{color:var(--mute)}
+.spacer{flex:1}
+.foot{font-size:21px;line-height:1.45;color:var(--grey);border-top:1px solid var(--line);padding-top:18px;margin-top:22px}
+.kick{font-size:20px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.kick .lnk{border-bottom:2px solid var(--gold);padding-bottom:5px}
+.opt{padding:28px 0 28px 34px;border-left:5px solid var(--line);margin-bottom:26px}
+.opt .lbl{font-size:20px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.opt p{font-size:33px;line-height:1.42;color:var(--grey)}
+.opt.pick{border-left-color:var(--gold)}
+.opt.pick .lbl{color:var(--gold)}
+.opt.pick p{color:var(--ink);font-weight:500}
+.why{font-size:31px;line-height:1.5;margin-top:14px}
+.why b{color:var(--navy)}
+.chip{display:flex;align-items:center;gap:13px;margin-top:30px;
+  font-size:19px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.chip i{width:15px;height:15px;border-radius:50%;display:block;flex:none}
+.chip s{text-decoration:none;font-weight:500;letter-spacing:.04em;text-transform:none;font-size:20px;color:var(--grey)}
+.grp{margin-bottom:22px}
+.grp h4{font-size:20px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:18px}
+.grp .row{display:flex;gap:20px;font-size:27px;line-height:1.35;margin-bottom:11px}
+.grp .row span{font-family:var(--serif);font-weight:700;color:var(--navy);width:44px;flex:none}
+.figs{display:flex;gap:26px;margin:12px 0 6px}
+.figs>div{flex:1;border-top:4px solid var(--navy);padding-top:20px}
+.figs b{display:block;font-family:var(--serif);font-size:76px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.02em}
+.figs span{display:block;font-size:22px;line-height:1.38;color:var(--mute);margin-top:14px}
+ol.q{list-style:none;counter-reset:q}
+ol.q li{counter-increment:q;font-size:31px;line-height:1.4;margin-bottom:29px;padding-left:74px;position:relative}
+ol.q li:before{content:counter(q);position:absolute;left:0;top:-1px;width:50px;height:50px;border-radius:50%;
+  background:var(--navy);color:var(--paper);font-family:var(--serif);font-size:29px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.mark{width:96px;height:9px;background:var(--gold);margin-bottom:42px}
+.pgno{position:absolute;bottom:42px;right:92px;font-size:20px;color:var(--grey);letter-spacing:.04em}
+.link{color:#3E6E8E;font-weight:600;word-break:break-all}
+.legend{display:flex;flex-wrap:wrap;gap:16px 34px;margin-top:8px}
+.legend span{display:flex;align-items:center;gap:11px;font-size:21px;color:var(--mute)}
+.legend i{width:13px;height:13px;border-radius:50%;display:block}
+/* editor bar */
+#bar{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:9px;font-family:var(--sans)}
+#bar button{font:600 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;
+  padding:11px 16px;border:1px solid #b9b1a3;background:#fff;color:#33383d;border-radius:7px;cursor:pointer}
+#bar button:hover{background:#f2ede4}
+#bar button.on{background:var(--gold);border-color:var(--gold);color:#fff}
+@media print{
+  html,body{background:#fff}
+  #stage{gap:0;padding:0}
+  #bar{display:none}
+  .page{box-shadow:none;break-after:page;page-break-after:always;transform:none!important;outline:none!important}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  @page{size:1080px 1350px;margin:0}
+}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <button id="printBtn">Print / PDF</button>
+</div>
+
+<div id="stage"></div>
+
+<script>
+(function(){
+  var DATA = JSON.parse(document.getElementById('deck').textContent);
+  var BASE = DATA.playbookBase || '';
+
+  var LABEL={published:'Published',reasoned:'Reasoned',modelled:'Modelled',firsthand:'First-hand',judgement:'Judgement'};
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function md(s){ return esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>')
+                              .replace(/\[\[(.+?)\]\]/g,'<span class="lnk">$1</span>')
+                              .replace(/(linkedin\.com\/in\/[A-Za-z0-9_-]+)/g,'<a class="lnk" href="https://www.$1" target="_blank" rel="noopener" style="color:inherit">$1</a>'); }
+  function nl(s){ return md(s).replace(/\n/g,'<br>'); }
+  function f(key, html, tag){ tag = tag||'p'; return '<'+tag+' data-f="'+key+'">'+html+'</'+tag+'>'; }
+
+  function head(p, i){
+    var right = p.refSlug
+      ? '<a class="ref" href="'+esc(BASE)+'#'+esc(p.refSlug)+'" target="_blank" rel="noopener"><span data-f="'+i+'.ref">'+esc(p.ref)+'</span></a>'
+      : '<span class="ref" data-f="'+i+'.ref">'+esc(p.ref||'')+'</span>';
+    return '<div class="top"><span class="count" data-f="'+i+'.count">'+esc(p.count||'')+'</span>'+right+'</div>';
+  }
+  function chip(p, i){
+    if(!p.evidence) return '';
+    var k = p.evidence;
+    return '<div class="chip"><i style="background:var(--'+esc(k)+')"></i>'
+      + '<span data-f="'+i+'.evidence">'+esc(LABEL[k]||k)+'</span>'
+      + (p.source ? '<s><span data-f="'+i+'.source">'+esc(p.source)+'</span></s>' : '') + '</div>';
+  }
+  function foot(p, i){ return '<p class="foot" data-f="'+i+'.footnote">'+md(p.footnote||'')+'</p>'; }
+  function gap(h){ return '<div style="height:'+h+'px"></div>'; }
+
+  var R = {
+    cover: function(p,i){
+      return '<div class="mark"></div>'
+        + '<div class="kick"><a href="'+esc(BASE)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none"><span data-f="'+i+'.kicker">'+md(p.kicker)+'</span></a></div>'+gap(58)
+        + '<h1 data-f="'+i+'.title">'+nl(p.title)+'</h1>'+gap(50)
+        + '<p class="lede mute" data-f="'+i+'.lede">'+md(p.lede)+'</p>'
+        + '<div class="spacer"></div>'
+        + '<div class="legend">'
+          + ['published','reasoned','firsthand','judgement'].map(function(k){
+              return '<span><i style="background:var(--'+k+')"></i>'+LABEL[k]+'</span>'; }).join('')
+        + '</div>' + foot(p,i);
+    },
+    stat: function(p,i){
+      return head(p,i) + '<h2 data-f="'+i+'.title">'+nl(p.title)+'</h2>'+gap(56)
+        + '<div class="figs">' + p.figures.map(function(x,j){
+            return '<div><b data-f="'+i+'.figures.'+j+'.number">'+esc(x.number)+'</b><span data-f="'+i+'.figures.'+j+'.label">'+esc(x.label)+'</span></div>';
+          }).join('') + '</div>' + gap(56)
+        + '<p class="lede" data-f="'+i+'.lede">'+md(p.lede)+'</p>'+gap(34)
+        + '<p class="lede" data-f="'+i+'.lede2">'+md(p.lede2)+'</p>'
+        + chip(p,i) + '<div class="spacer"></div>' + foot(p,i);
+    },
+    map: function(p,i){
+      return head(p,i) + '<h3 style="margin-bottom:44px" data-f="'+i+'.title">'+nl(p.title)+'</h3>'
+        + p.groups.map(function(g,j){
+            return '<div class="grp"><h4 data-f="'+i+'.groups.'+j+'.name">'+esc(g.name)+'</h4>'
+              + g.items.map(function(it,k){
+                  var b = i+'.groups.'+j+'.items.'+k;
+                  return '<div class="row"><span data-f="'+b+'.n">'+esc(it.n)+'</span>'
+                    + '<span style="width:auto;font-family:var(--sans);font-weight:400;color:var(--ink)" data-f="'+b+'.text">'+esc(it.text)+'</span></div>';
+                }).join('') + '</div>';
+          }).join('')
+        + '<div class="spacer"></div>' + foot(p,i);
+    },
+    decision: function(p,i){
+      return head(p,i) + '<h2 data-f="'+i+'.title">'+nl(p.title)+'</h2>'+gap(50)
+        + '<div class="fork">'
+          + '<div class="opt"><div class="lbl">By default</div>'+f(i+'.usually', md(p.usually))+'</div>'
+          + '<div class="opt pick"><div class="lbl">By choice</div>'+f(i+'.instead', md(p.instead))+'</div>'
+        + '</div>' + gap(20)
+        + '<p class="why" data-f="'+i+'.why">'+md(p.why)+'</p>'
+        + chip(p,i) + '<div class="spacer"></div>' + foot(p,i);
+    },
+    pattern: function(p,i){
+      return head(p,i) + '<h2 data-f="'+i+'.title">'+nl(p.title)+'</h2>'+gap(50)
+        + '<p class="lede" data-f="'+i+'.lede">'+md(p.lede)+'</p>'+gap(44)
+        + '<p class="why" data-f="'+i+'.why">'+md(p.why)+'</p>'+gap(38)
+        + '<p class="lede" data-f="'+i+'.lede2">'+md(p.lede2)+'</p>'
+        + chip(p,i) + '<div class="spacer"></div>' + foot(p,i);
+    },
+    questions: function(p,i){
+      return head(p,i) + '<h2 data-f="'+i+'.title">'+nl(p.title)+'</h2>'+gap(52)
+        + '<ol class="q">' + p.questions.map(function(q,j){
+            return '<li data-f="'+i+'.questions.'+j+'">'+esc(q)+'</li>'; }).join('') + '</ol>'
+        + gap(14) + '<p class="lede" data-f="'+i+'.lede">'+md(p.lede)+'</p>'
+        + '<div class="spacer"></div>' + foot(p,i);
+    },
+    end: function(p,i){
+      return '<div class="mark"></div>'
+        + '<div class="kick" data-f="'+i+'.kicker">'+esc(p.kicker)+'</div>'+gap(44)
+        + '<h2 data-f="'+i+'.title">'+nl(p.title)+'</h2>'+gap(44)
+        + '<p class="lede" data-f="'+i+'.lede">'+md(p.lede)+'</p>'+gap(44)
+        + '<p style="font-size:29px;line-height:1.5"><a class="link" href="'+esc(BASE)+'" target="_blank" rel="noopener"><span data-f="'+i+'.url">'+esc(p.url)+'</span></a></p>'+gap(40)
+        + '<p class="why" data-f="'+i+'.why">'+md(p.why)+'</p>'
+        + '<div class="spacer"></div>' + foot(p,i);
+    }
+  };
+
+  function render(){
+    var stage = document.getElementById('stage');
+    stage.innerHTML = DATA.pages.map(function(p,i){
+      var fn = R[p.type];
+      return '<section class="page">' + (fn ? fn(p,i) : '<p>Unknown page type: '+esc(p.type)+'</p>')
+        + '<span class="pgno">'+(i+1)+'</span></section>';
+    }).join('');
+    fit();
+  }
+
+  function fit(){
+    var s = Math.min(1, (window.innerWidth - 52) / 1080);
+    document.querySelectorAll('.page').forEach(function(el){
+      el.style.transform = 'scale('+s+')';
+      el.style.transformOrigin = 'top center';
+      el.style.marginBottom = (1350*s - 1350) + 'px';
+    });
+  }
+  window.addEventListener('resize', fit);
+
+  document.getElementById('printBtn').onclick = function(){ window.print(); };
+
+  render();
+})();
+</script>
+</body>
+</html>
