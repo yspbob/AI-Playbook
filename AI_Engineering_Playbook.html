@@ -17,7 +17,6 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:#ded9d0;color:var(--ink);font-family:var(--sans);line-height:1.64;font-size:16px;
 text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;}
-#pbar{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:90;transform:scaleX(0);transform-origin:0 0;will-change:transform;}
 .layout{display:flex;gap:0;max-width:1210px;margin:0 auto;background:var(--paper);box-shadow:0 6px 26px rgba(40,34,24,.18);}
 .toc-nav{position:sticky;top:0;align-self:flex-start;width:274px;flex:none;max-height:100vh;overflow:auto;
 padding:34px 16px 34px 28px;font-size:12.5px;border-right:1px solid var(--line);background:var(--soft);line-height:1.45;}
@@ -56,10 +55,11 @@ a.secref{color:#2d6696;text-decoration:none;border-bottom:1px dotted #b3a98f;}
 strong{color:#1a2431;}em{color:inherit;}
 blockquote{margin:18px 0;padding:4px 0 4px 24px;border-left:4px solid var(--accent);background:none;}
 blockquote p{margin:0;font-size:16px;line-height:1.6;}
-p.fm,p.sig,p.deliv,p.field{padding:14px 20px;font-size:15.5px;background:var(--tint);border:0;border-left:4px solid var(--gold);}
-p.sig{border-left-color:#8a8272;}
-p.deliv{border-left-color:var(--accent);}
-p.field{border-left-color:#4A7A55;}
+p.fm,p.sig,p.deliv,p.field{padding:16px 20px 14px;font-size:15.5px;background:var(--tint);border:0;}
+p.fm::before,p.sig::before,p.deliv::before,p.field::before{content:"";display:block;width:40px;height:3px;border-radius:1.5px;margin-bottom:12px;background:var(--gold);}
+p.sig::before{background:#8a8272;}
+p.deliv::before{background:var(--accent);}
+p.field::before{background:#4A7A55;}
 p.field>strong:first-child{color:#4A7A55;}
 code{background:#F1ECE1;padding:1.5px 6px;border-radius:3px;font-size:13.5px;}pre{background:#F1ECE1;border:1px solid #E5DFD4;border-radius:6px;padding:12px 16px;overflow-x:auto;}pre code{background:none;padding:0;border-radius:0;}
 hr{border:0;border-top:1px solid var(--line);margin:34px 0 16px;}
@@ -102,15 +102,15 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
  h2{font-size:24px;margin-top:46px;}h3{font-size:18.5px;}
  p,li{font-size:15.5px;}
  #fab{display:block;}
- blockquote{padding-left:16px;}p.fm,p.sig,p.deliv,p.field{padding:12px 14px;}
+ blockquote{padding-left:16px;}p.fm,p.sig,p.deliv,p.field{padding:14px 14px 12px;}
 }
-@media print{.toc-nav,#pbar,#fab,#top,#drawer{display:none !important;}.layout{display:block;box-shadow:none;}
+@media print{.toc-nav,#fab,#top,#drawer{display:none !important;}.layout{display:block;box-shadow:none;}
  main{max-width:none;padding:0;}body{background:#fff;font-size:12.5px;}
  details{border:none;background:none;margin:8px 0;}details>summary{font-weight:700;color:var(--accent);}details>summary::before{content:"";}
  details:not([open])>*:not(summary){display:block !important;}
  h1::before,h2::before{display:none;}a{color:var(--ink);text-decoration:none;}}
 </style></head>
-<body><div id="pbar"></div><div class="layout">
+<body><div class="layout">
 <nav class="toc-nav"><div class="toc-head">CONTENTS</div><div class="toc">
 <ul>
 <li><a href="#ai-engineering-operating-model-playbook">AI Engineering Operating Model Playbook</a></li>
@@ -1984,8 +1984,7 @@ function onScroll(){
  if(tick)return;tick=true;
  requestAnimationFrame(function(){
   tick=false;
-  var st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;
-  document.getElementById('pbar').style.transform='scaleX('+(dh>0?st/dh:0)+')';
+  var st=window.scrollY;
   var t=document.getElementById('top');if(t)t.style.display=(st>900&&window.innerWidth>960)?'block':'none';
   var cur=null;
   for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<130)cur=heads[i];else break;}
