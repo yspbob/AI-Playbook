@@ -1003,7 +1003,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <li>Declare component risk tiers: an LLM-drafted list of critical paths, confirmed by their owners, is enough to start, with <a class="secref" href="#4-the-interpretation-layer">§4</a>'s fact graph refining the fan-in later.</li>
 <li>Stand up the machine review tier with an independent reviewer agent, and require senior sign-off on changes touching the top tier.</li>
 <li>Add the plan gate for structural changes, and mutation score where failure is expensive.</li>
-<li>Before scaling, baseline the DORA four: deployment frequency, lead time, change failure rate, recovery time (<a class="secref" href="#8-measurement">§8</a>).</li>
+<li>Before scaling, baseline the DORA five: deployment frequency, lead time, change failure rate, recovery time and rework rate (<a class="secref" href="#8-measurement">§8</a>).</li>
 </ul>
 <p><em>Phase 0-1, <a class="secref" href="#11-sequencing-roadmap">§11</a>.</em></p>
 <p><strong>What to watch.</strong> Working: throughput rising while change failure rate stays flat or falls. Failing: both rising together, meaning the gates are undersized, so stop scaling and fix the floor (<a class="secref" href="#10-readiness-model-8-dimensions">§10</a>).</p>
@@ -1174,9 +1174,9 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </blockquote>
 <p><em>(Measurement supplies the evidence column of the <a class="secref" href="#10-readiness-model-8-dimensions">§10</a> scorecard).</em></p>
 <h3 id="two-metric-layers-and-a-standing-instrument">Two metric layers and a standing instrument</h3>
-<p><strong>Layer 1, outcomes: the DORA four</strong> (deployment frequency, lead time, change failure rate, recovery time). If the gain is real, this is where it eventually lands, and every other metric in this section is a leading indicator for these four. The four can tell you that something changed. Whether AI did it is a question for the attribution stack, below.</p>
+<p><strong>Layer 1, outcomes: the DORA five</strong> (deployment frequency, lead time, change failure rate, recovery time and, since the 2023 report, rework rate). If the gain is real, this is where it eventually lands, and every other metric in this section is a leading indicator for these five. The five can tell you that something changed. Whether AI did it is a question for the attribution stack, below.</p>
 <details>
-<summary>The DORA four, as instruments</summary>
+<summary>The DORA five, as instruments</summary>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1202,9 +1202,14 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <td>incidents linked to deploys</td>
 </tr>
 <tr>
-<td>Time to recovery</td>
+<td>Failed deployment recovery time</td>
 <td>and recovering as fast?</td>
 <td>incident tracker</td>
+</tr>
+<tr>
+<td>Deployment rework rate</td>
+<td>and how much of it is re-shipping?</td>
+<td>deploys that are hotfixes or rollbacks of earlier deploys</td>
 </tr>
 </tbody>
 </table></div>
@@ -1321,7 +1326,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </table></div>
 <p>Individual-level numbers stay out by design.</p>
 </details>
-<p><strong>Tooling: buy or build.</strong> Buy: <a href="https://getdx.com/" target="_blank" rel="noopener noreferrer">DX</a> covers all three collection channels (delivery telemetry, the AI metrics, the survey) in one platform, and <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer">LinearB</a> and <a href="https://jellyfish.co/" target="_blank" rel="noopener noreferrer">Jellyfish</a> cover the delivery side. For data residency, DX's <a href="https://docs.getdx.com/dedicated/" target="_blank" rel="noopener noreferrer">Dedicated</a> is a single-tenant instance and <a href="https://docs.getdx.com/managed/" target="_blank" rel="noopener noreferrer">Managed</a> runs in your own AWS or GCP account, keeping the data inside your estate. Build: integrate systems you already run. <a href="https://devlake.apache.org/" target="_blank" rel="noopener noreferrer">Apache DevLake</a> handles the DORA four, gateway (<a class="secref" href="#2-infrastructure-platform">§2</a>) and Langfuse exports handle the AI layer, a git query over trailers gives you provenance, and a disciplined quarterly form serves for the survey. Build costs engineering time up front and connector upkeep forever. At the same time vendor platforms carry peer benchmarks (where your throughput gain or change failure rate sits among 400 companies), while a build knows only your own trend. Products as of July 2026, volatile. Either way, the attribution stack below is deliberately not a product. It runs as queries over data these layers already collect.</p>
+<p><strong>Tooling: buy or build.</strong> Buy: <a href="https://getdx.com/" target="_blank" rel="noopener noreferrer">DX</a> covers all three collection channels (delivery telemetry, the AI metrics, the survey) in one platform, and <a href="https://linearb.io/" target="_blank" rel="noopener noreferrer">LinearB</a> and <a href="https://jellyfish.co/" target="_blank" rel="noopener noreferrer">Jellyfish</a> cover the delivery side. For data residency, DX's <a href="https://docs.getdx.com/dedicated/" target="_blank" rel="noopener noreferrer">Dedicated</a> is a single-tenant instance and <a href="https://docs.getdx.com/managed/" target="_blank" rel="noopener noreferrer">Managed</a> runs in your own AWS or GCP account, keeping the data inside your estate. Build: integrate systems you already run. <a href="https://devlake.apache.org/" target="_blank" rel="noopener noreferrer">Apache DevLake</a> handles the classic DORA four, gateway (<a class="secref" href="#2-infrastructure-platform">§2</a>) and Langfuse exports handle the AI layer, a git query over trailers gives you provenance, and a disciplined quarterly form serves for the survey. Build costs engineering time up front and connector upkeep forever. At the same time vendor platforms carry peer benchmarks (where your throughput gain or change failure rate sits among 400 companies), while a build knows only your own trend. Products as of July 2026, volatile. Either way, the attribution stack below is deliberately not a product. It runs as queries over data these layers already collect.</p>
 <p><strong>Attribution runs across everything above.</strong> Any series, whether a DORA metric, an AI-layer number or even a survey trend, answers "was that AI?" through the same three-instrument stack <em>(the playbook's own assembly)</em>: the provenance split within a team, wave cohorts across teams, and efficiency curves in onboarding time. Mechanics below.</p>
 <details>
 <summary>The attribution stack, mechanics</summary>
@@ -1338,7 +1343,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <p>Acceptance rate is gameable, and in the agent era it is meaningless anyway, since everything an agent writes counts as accepted. Percent-of-code-written-by-AI is fine as telemetry but makes a disastrous goal. Weighting it by survival, the share that reaches production and stays there, makes it a better diagnostic and no safer as a target: a share of authorship is not a unit of value, and the number moves just as well by attributing more work to AI or by lowering what it takes to ship. Lines of code fare no better: a line written and discarded a week later counts exactly the same as one that ships, so the count measures waste alongside work. Tool DAU (daily active users) tracks habit formation and stops there. Goodhart's law applies, "when a measure becomes a target, it ceases to be a good measure": any usage measure made a target will be hit by the cheapest behaviour. The numbers stay honest as telemetry, because it is the targeting that corrupts them.</p>
 <p class="fm"><strong>First moves.</strong></p>
 <ul>
-<li>Capture the baseline before scaling: the DORA four, time allocation (where the engineering week actually goes, the baseline <a class="secref" href="#9-value-capture">§9</a>'s ledger needs) and spend.</li>
+<li>Capture the baseline before scaling: the DORA five, time allocation (where the engineering week actually goes, the baseline <a class="secref" href="#9-value-capture">§9</a>'s ledger needs) and spend.</li>
 <li>Stand up one dashboard per team, with utilization, impact and cost side by side.</li>
 <li>Turn provenance on by default.</li>
 <li>Schedule the quarterly survey.</li>
