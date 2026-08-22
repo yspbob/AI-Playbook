@@ -273,7 +273,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <summary>Sources for <a class="secref" href="#1-thesis-operating-principles">§1</a>, linked</summary>
 <p><strong>Headline stat footnotes</strong></p>
 <ol>
-<li><a id="fn-dx"></a><strong>DX (2026)</strong>: developer intelligence research firm, backed by the creator of DORA (DevOps Research and Assessment, Google's engineering performance research programme) and SPACE (its developer productivity measurement framework). Longitudinal study of ~400 companies (Nov 2024 to Feb 2026): PR throughput rose just <strong>7.76%</strong> even as AI usage jumped 65% (an org-level average across companies, used here as a diagnostic, while <a class="secref" href="#8-measurement">§8</a>'s ban is on making activity metrics <em>targets</em>, which is where Goodhart's law bites) (most orgs land in the 5-15% range, and the average hides wide individual swings: DX's own quality analysis measured shifts of up to 50% in either direction on metrics like change failure rate (<a href="https://newsletter.getdx.com/p/ai-impact-on-quality-in-engineering" target="_blank" rel="noopener noreferrer">DX analysis</a>), in line with the amplifier argument in <a class="secref" href="#1-thesis-operating-principles">§1</a>). I'd consider the number indicative of scale rather than proof of cause, as during the 15-month measurement window the companies very likely changed headcount, processes, tooling, etc. The count is also merged pull requests rather than what reached production, and it does not separate rework from new work. Source: Justin Reock (DX), <a href="https://getdx.com/blog/ai-productivity-gains-are-10-percent-not-10x/" target="_blank" rel="noopener noreferrer"><em>AI productivity gains are 10%, not 10x</em></a>. <a href="#ref-dx">↩</a></li>
+<li><a id="fn-dx"></a><strong>DX (2026)</strong>: developer intelligence research firm, backed by the creator of DORA (DevOps Research and Assessment, Google's engineering performance research programme) and SPACE (its developer productivity measurement framework). Longitudinal study of ~400 companies (Nov 2024 to Feb 2026): PR throughput rose just <strong>7.76%</strong> even as AI usage jumped 65% (an org-level average across companies, used here as a diagnostic, while <a class="secref" href="#8-measurement">§8</a>'s ban is on making activity metrics <em>targets</em>, which is where Goodhart's law bites) (most orgs land in the 5-15% range, and the average hides wide individual swings: DX's own quality analysis measured shifts of up to 50% in either direction on metrics like change failure rate (<a href="https://newsletter.getdx.com/p/ai-impact-on-quality-in-engineering" target="_blank" rel="noopener noreferrer">DX analysis</a>)). I'd consider the number indicative of scale rather than proof of cause, as during the 15-month measurement window the companies very likely changed headcount, processes, tooling, etc. The count is also merged pull requests rather than what reached production, and it does not separate rework from new work. Source: Justin Reock (DX), <a href="https://getdx.com/blog/ai-productivity-gains-are-10-percent-not-10x/" target="_blank" rel="noopener noreferrer"><em>AI productivity gains are 10%, not 10x</em></a>. <a href="#ref-dx">↩</a></li>
 <li><a id="fn-mck"></a><strong>McKinsey, <em>The State of AI</em> (Nov 2025)</strong>: global survey. Only 39% of organisations report <em>any</em> enterprise-level EBIT impact from AI, and most of those put it under 5% of EBIT. ~6% are "high performers" (≥5% EBIT plus significant value), and nearly two-thirds have not yet begun scaling AI enterprise-wide. Source: <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">McKinsey, The State of AI</a>. <a href="#ref-mck">↩</a></li>
 </ol>
 <p><strong>Other sources</strong></p>
@@ -315,73 +315,73 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <svg viewBox="0 0 1000 718" xmlns="http://www.w3.org/2000/svg" font-family="Inter,-apple-system,'Segoe UI',Roboto,Helvetica,sans-serif" role="img" aria-labelledby="pra_t pra_d">
 <title id="pra_t">Reference architecture: the AI-augmented engineering platform</title>
 <desc id="pra_d">Reference architecture for an AI-augmented engineering platform, a personas band above eight planes, identity, developer portal, agentic tools, context plane, AI gateway, assurance, observability, and the model plane in your tenancy, flanked by a governance band on the left and a FinOps band on the right. Requests flow down the eight planes, results and telemetry flow up.</desc>
-<defs><marker id="ar" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0.6 L9,4 L0,7.4 Z" fill="#97A2B2"/></marker><marker id="arN" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0.6 L9,4 L0,7.4 Z" fill="#1F3864"/></marker></defs>
-<rect x="24" y="18" width="40" height="3" rx="1.5" fill="#B08A2E"/>
-<text x="24" y="40" font-size="15.0" font-weight="650" fill="#1F3864">Reference architecture: the AI-augmented engineering platform</text>
-<text x="500.0" y="58.0" text-anchor="middle" font-size="12.0" fill="#5A6572" font-style="italic">Pick a persona → the platform provisions the bundle below (identity, golden paths, tools, context, limits, gates)</text>
-<rect x="20" y="72" width="48" height="568" rx="8" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
-<rect x="26.0" y="82" width="3.5" height="548" rx="1.75" fill="#6A2F93"/>
+<path transform="translate(24 18)" d="M 1.5 0 L 38.5 0 C 39.33 0 40 0.67 40 1.5 C 40 2.33 39.33 3 38.5 3 L 1.5 3 C 0.67 3 0 2.33 0 1.5 C 0 0.67 0.67 0 1.5 0 Z" fill="#B08A2E"/>
+<text x="24" y="40" font-size="15" font-weight="650" fill="#1F3864">Reference architecture: the AI-augmented engineering platform</text>
+<text x="500" y="58" text-anchor="middle" font-size="12" font-style="italic" fill="#5A6572">Pick a persona → the platform provisions the bundle below (identity, golden paths, tools, context, limits, gates)</text>
+<path transform="translate(20 72)" d="M 8 0 L 40 0 C 44.42 0 48 3.58 48 8 L 48 560 C 48 564.42 44.42 568 40 568 L 8 568 C 3.58 568 0 564.42 0 560 L 0 8 C 0 3.58 3.58 0 8 0 Z" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
+<path transform="translate(26 82)" d="M 1.75 0 C 2.72 0 3.5 0.78 3.5 1.75 L 3.5 546.25 C 3.5 547.22 2.72 548 1.75 548 C 0.78 548 0 547.22 0 546.25 L 0 1.75 C 0 0.78 0.78 0 1.75 0 Z" fill="#6A2F93"/>
 <text x="50" y="356" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1.2" fill="#6A2F93" transform="rotate(-90 50 356)">GOVERNANCE: RBAC, QUOTAS, PROVENANCE</text>
-<rect x="932" y="72" width="48" height="568" rx="8" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
-<rect x="938.0" y="82" width="3.5" height="548" rx="1.75" fill="#806015"/>
+<path transform="translate(932 72)" d="M 8 0 L 40 0 C 44.42 0 48 3.58 48 8 L 48 560 C 48 564.42 44.42 568 40 568 L 8 568 C 3.58 568 0 564.42 0 560 L 0 8 C 0 3.58 3.58 0 8 0 Z" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
+<path transform="translate(938 82)" d="M 1.75 0 C 2.72 0 3.5 0.78 3.5 1.75 L 3.5 546.25 C 3.5 547.22 2.72 548 1.75 548 C 0.78 548 0 547.22 0 546.25 L 0 1.75 C 0 0.78 0.78 0 1.75 0 Z" fill="#806015"/>
 <text x="962" y="356" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1.2" fill="#806015" transform="rotate(-90 962 356)">FINOPS: BUDGETS, SHOWBACK</text>
-<rect x="76" y="74" width="848" height="52" rx="9" fill="#1F3864" stroke="#16294B" stroke-width="1.4"/>
+<path transform="translate(76 74)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#1F3864" stroke="#16294B" stroke-width="1.4"/>
 <text x="96" y="98" font-size="14" font-weight="700" fill="#FFFFFF">PERSONAS</text>
 <text x="96" y="115" font-size="12" fill="#C9D4E4">Developers, AI agents: first-class platform citizens (RBAC, quotas, golden paths)</text>
-<path d="M493 129 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="138" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
-<rect x="86" y="145" width="828" height="4" rx="2" fill="#6A2F93"/>
+<path transform="translate(493 129)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 138)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
+<path transform="translate(86 145)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#6A2F93"/>
 <text x="96" y="165" font-size="14" font-weight="650" fill="#6A2F93">Identity &amp; access</text>
-<text x="96" y="182" font-size="12" fill="#5A6572">Okta / Entra + agent identities, OAuth 2.1 for MCP connections</text>
-<path d="M493 193 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="202" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
-<rect x="86" y="209" width="828" height="4" rx="2" fill="#234A82"/>
+<text x="96" y="182" font-size="12" fill="#5A6572">Okta / Entra + agent identities</text>
+<path transform="translate(493 193)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 202)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
+<path transform="translate(86 209)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#234A82"/>
 <text x="96" y="229" font-size="14" font-weight="650" fill="#234A82">Developer portal (IDP): golden paths &amp; self-service</text>
 <text x="96" y="246" font-size="12" fill="#5A6572">Backstage (self-host), alternatives in the table</text>
-<path d="M493 257 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="266" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
-<rect x="86" y="273" width="828" height="4" rx="2" fill="#234A82"/>
+<path transform="translate(493 257)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 266)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
+<path transform="translate(86 273)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#234A82"/>
 <text x="96" y="293" font-size="14" font-weight="650" fill="#234A82">Agentic tools: IDE + CLI agents</text>
 <text x="96" y="310" font-size="12" fill="#5A6572">Claude Code, Codex via your Bedrock / Azure endpoint (cloud: Copilot, Cursor)</text>
-<path d="M493 321 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="330" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
-<rect x="86" y="337" width="828" height="4" rx="2" fill="#234A82"/>
+<path transform="translate(493 321)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 330)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
+<path transform="translate(86 337)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#234A82"/>
 <text x="96" y="357" font-size="14" font-weight="650" fill="#234A82">Context plane: MCP + code retrieval</text>
 <text x="96" y="374" font-size="12" fill="#5A6572">Code search + retrieval layer, served over MCP</text>
-<path d="M493 385 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="394" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
-<rect x="86" y="401" width="828" height="4" rx="2" fill="#806015"/>
+<path transform="translate(493 385)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 394)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
+<path transform="translate(86 401)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#806015"/>
 <text x="96" y="421" font-size="14" font-weight="650" fill="#806015">AI gateway: routing, budgets, guardrails, audit</text>
 <text x="96" y="438" font-size="12" fill="#5A6572">LiteLLM / Portkey (in-VPC)</text>
-<path d="M493 449 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="458" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
-<rect x="86" y="465" width="828" height="4" rx="2" fill="#234A82"/>
+<path transform="translate(493 449)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 458)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
+<path transform="translate(86 465)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#234A82"/>
 <text x="96" y="485" font-size="14" font-weight="650" fill="#234A82">Assurance: evals + CI gates</text>
 <text x="96" y="502" font-size="12" fill="#5A6572">Langfuse + Promptfoo, plus your tests in CI</text>
-<path d="M493 513 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="522" width="848" height="52" rx="9" fill="#FFFFFF" stroke="#B5D6AB" stroke-width="1.2"/>
-<rect x="86" y="529" width="828" height="4" rx="2" fill="#2C6427"/>
+<path transform="translate(493 513)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 522)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#FFFFFF" stroke="#B5D6AB" stroke-width="1.2"/>
+<path transform="translate(86 529)" d="M 2 0 L 826 0 C 827.1 0 828 0.9 828 2 C 828 3.1 827.1 4 826 4 L 2 4 C 0.9 4 0 3.1 0 2 C 0 0.9 0.9 0 2 0 Z" fill="#2C6427"/>
 <text x="96" y="549" font-size="14" font-weight="650" fill="#2C6427">Observability &amp; cost telemetry</text>
 <text x="96" y="566" font-size="12" fill="#5A6572">Langfuse / Datadog (self-host)</text>
-<path d="M493 577 l7 5 l7 -5" fill="none" stroke="#97A2B2" stroke-width="1.6" stroke-linecap="round"/>
-<rect x="76" y="586" width="848" height="52" rx="9" fill="#1F3864" stroke="#16294B" stroke-width="1.4"/>
+<path transform="translate(493 577)" d="M 0 0 L 7 5 L 14 0" fill="none" stroke="#97A2B2" stroke-width="1.6"/>
+<path transform="translate(76 586)" d="M 9 0 L 839 0 C 843.97 0 848 4.03 848 9 L 848 43 C 848 47.97 843.97 52 839 52 L 9 52 C 4.03 52 0 47.97 0 43 L 0 9 C 0 4.03 4.03 0 9 0 Z" fill="#1F3864" stroke="#16294B" stroke-width="1.4"/>
 <text x="96" y="610" font-size="14" font-weight="700" fill="#FFFFFF">Model plane: in your tenancy</text>
 <text x="96" y="627" font-size="12" fill="#C9D4E4">Bedrock, Azure OpenAI (in-VNet), self-host Llama (vLLM)</text>
-<text x="922.0" y="70.0" text-anchor="end" font-size="11.0" fill="#8A94A2" font-style="italic">request flows down the eight planes, results &amp; telemetry flow up</text>
-<text x="500.0" y="668.0" text-anchor="middle" font-size="12.0" fill="#5A6572" font-style="italic">One default tool per plane = the stack. Regulated environment: data stays in your VPC, with lighter cloud picks in the table. Products as of July 2026 (volatile).</text>
-<rect x="158.7" y="688.0" width="16.5" height="16.5" rx="3" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
-<rect x="161.2" y="690.5" width="11.4" height="4.3" rx="1.7" fill="#234A82"/>
-<text x="181.5" y="701.9" text-anchor="start" font-size="14.6" fill="#5A6572">Realisation</text>
-<rect x="294.0" y="688.0" width="16.5" height="16.5" rx="3" fill="#FFFFFF" stroke="#B5D6AB" stroke-width="1.2"/>
-<rect x="296.5" y="690.5" width="11.4" height="4.3" rx="1.7" fill="#2C6427"/>
-<text x="316.8" y="701.9" text-anchor="start" font-size="14.6" fill="#5A6572">Cash-conversion</text>
-<rect x="459.2" y="688.0" width="16.5" height="16.5" rx="3" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
-<rect x="461.7" y="690.5" width="11.4" height="4.3" rx="1.7" fill="#806015"/>
-<text x="482.0" y="701.9" text-anchor="start" font-size="14.6" fill="#5A6572">FinOps / consumption</text>
-<rect x="661.7" y="688.0" width="16.5" height="16.5" rx="3" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
-<rect x="664.2" y="690.5" width="11.4" height="4.3" rx="1.7" fill="#6A2F93"/>
-<text x="684.5" y="701.9" text-anchor="start" font-size="14.6" fill="#5A6572">Governance / op model</text>
+<text x="922" y="70" text-anchor="end" font-size="11" font-style="italic" fill="#8A94A2">request flows down the eight planes, results &amp; telemetry flow up</text>
+<text x="500" y="668" text-anchor="middle" font-size="12" font-style="italic" fill="#5A6572">One default tool per plane = the stack. Regulated environment: data stays in your VPC, with lighter cloud picks in the table. Products as of July 2026 (volatile).</text>
+<path transform="translate(158.7 688)" d="M 3 0 L 13.5 0 C 15.16 0 16.5 1.34 16.5 3 L 16.5 13.5 C 16.5 15.16 15.16 16.5 13.5 16.5 L 3 16.5 C 1.34 16.5 0 15.16 0 13.5 L 0 3 C 0 1.34 1.34 0 3 0 Z" fill="#FFFFFF" stroke="#B9CCE8" stroke-width="1.2"/>
+<path transform="translate(161.2 690.5)" d="M 1.7 0 L 9.7 0 C 10.64 0 11.4 0.76 11.4 1.7 L 11.4 2.6 C 11.4 3.54 10.64 4.3 9.7 4.3 L 1.7 4.3 C 0.76 4.3 0 3.54 0 2.6 L 0 1.7 C 0 0.76 0.76 0 1.7 0 Z" fill="#234A82"/>
+<text x="181.5" y="701.9" font-size="14.6" fill="#5A6572">Realisation</text>
+<path transform="translate(294 688)" d="M 3 0 L 13.5 0 C 15.16 0 16.5 1.34 16.5 3 L 16.5 13.5 C 16.5 15.16 15.16 16.5 13.5 16.5 L 3 16.5 C 1.34 16.5 0 15.16 0 13.5 L 0 3 C 0 1.34 1.34 0 3 0 Z" fill="#FFFFFF" stroke="#B5D6AB" stroke-width="1.2"/>
+<path transform="translate(296.5 690.5)" d="M 1.7 0 L 9.7 0 C 10.64 0 11.4 0.76 11.4 1.7 L 11.4 2.6 C 11.4 3.54 10.64 4.3 9.7 4.3 L 1.7 4.3 C 0.76 4.3 0 3.54 0 2.6 L 0 1.7 C 0 0.76 0.76 0 1.7 0 Z" fill="#2C6427"/>
+<text x="316.8" y="701.9" font-size="14.6" fill="#5A6572">Cash-conversion</text>
+<path transform="translate(459.2 688)" d="M 3 0 L 13.5 0 C 15.16 0 16.5 1.34 16.5 3 L 16.5 13.5 C 16.5 15.16 15.16 16.5 13.5 16.5 L 3 16.5 C 1.34 16.5 0 15.16 0 13.5 L 0 3 C 0 1.34 1.34 0 3 0 Z" fill="#FFFFFF" stroke="#E3CD96" stroke-width="1.2"/>
+<path transform="translate(461.7 690.5)" d="M 1.7 0 L 9.7 0 C 10.64 0 11.4 0.76 11.4 1.7 L 11.4 2.6 C 11.4 3.54 10.64 4.3 9.7 4.3 L 1.7 4.3 C 0.76 4.3 0 3.54 0 2.6 L 0 1.7 C 0 0.76 0.76 0 1.7 0 Z" fill="#806015"/>
+<text x="482" y="701.9" font-size="14.6" fill="#5A6572">FinOps / consumption</text>
+<path transform="translate(661.7 688)" d="M 3 0 L 13.5 0 C 15.16 0 16.5 1.34 16.5 3 L 16.5 13.5 C 16.5 15.16 15.16 16.5 13.5 16.5 L 3 16.5 C 1.34 16.5 0 15.16 0 13.5 L 0 3 C 0 1.34 1.34 0 3 0 Z" fill="#FFFFFF" stroke="#D4B9E6" stroke-width="1.2"/>
+<path transform="translate(664.2 690.5)" d="M 1.7 0 L 9.7 0 C 10.64 0 11.4 0.76 11.4 1.7 L 11.4 2.6 C 11.4 3.54 10.64 4.3 9.7 4.3 L 1.7 4.3 C 0.76 4.3 0 3.54 0 2.6 L 0 1.7 C 0 0.76 0.76 0 1.7 0 Z" fill="#6A2F93"/>
+<text x="684.5" y="701.9" font-size="14.6" fill="#5A6572">Governance / op model</text>
 </svg>
+
 </figure></p>
 <p>The platform decomposes into eight planes.</p>
 <ul>
