@@ -1411,9 +1411,9 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <h3 id="why-readiness-decides-the-outcome">Why readiness decides the outcome</h3>
 <p><a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report" target="_blank" rel="noopener noreferrer">DORA's 2025 survey of nearly 5,000 technology professionals</a> and <a href="https://dora.dev/ai/capabilities-model/report/" target="_blank" rel="noopener noreferrer">its capabilities model</a> supply the evidence: "The value of AI is unlocked not by the tools themselves, but by the surrounding technical practices and cultural environment." <a href="https://www.sei.cmu.edu/projects/ai-adoption-maturity-model-improving-how-organizations-adopt-ai-solutions/" target="_blank" rel="noopener noreferrer">Carnegie Mellon SEI and Accenture</a> arrive at the same place by a different route: their maturity model scores whether the engineering practices and governance underneath the AI hold, rather than how much of it you have deployed.</p>
 <p>The mechanism is the Theory of Constraints, which DORA's report also leans on: every system has a limiting factor that governs what it can deliver, and speeding up anything else just grows the queue in front of it. <a href="https://dora.dev/research/2025/dora-report/" target="_blank" rel="noopener noreferrer">DORA's example</a> is a team that put AI on code review, its real bottleneck, rather than on writing more code that would only lengthen that queue. More volume does not widen the constraint, so the cost of a weakness grows with adoption, and one bad enough event, whether runaway spend, a breach or an outage that reaches customers, can hand back the accumulated gains. What this playbook adds is the floor: the lowest score marks the dimension it is not yet safe to scale on. The floor says where scaling is likely to break things. The bottleneck is where the flow is stuck today, and the way to find it is value stream mapping, as DORA recommends.</p>
-<p class="field"><strong>From the field.</strong> Raising the delivery floor was a multi-quarter programme itself. On the xVA platform, each improvement stream (regression automation, build stability, deployment automation) carried an estimate of three to nine months with the teams and SMEs we had, and the streams had to be sequenced against delivery commitments. AI compresses some of this work. What it does not compress is the prioritisation against business-impacting deliverables or the SME time, and on large-scale platforms both are still planned in quarters.</p>
+<p class="field"><strong>From the field.</strong> Raising the delivery floor was a multi-quarter programme itself. On the xVA platform, each improvement stream (regression automation, build stability, deployment automation) carried an estimate of three to nine months with the teams and SMEs we had, and the streams had to be sequenced against delivery commitments. AI compresses some of this, but the prioritisation against business deliverables and the SME time remain the challenge.</p>
 <h3 id="the-readiness-scale-applies-to-every-dimension">The readiness scale (applies to every dimension)</h3>
-<p>The scale is the playbook's own. The levels are labels of convenience on what is really a capability profile: no level is an end state, and L4 is a bet rather than a destination.</p>
+<p>The scale is the playbook's own, with the levels as labels for a capability profile. No level is an end state, and I'd treat L4 as an aspirational bet rather than a destination.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -1543,7 +1543,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <td>5. Process &amp; delivery</td>
 </tr>
 <tr>
-<td><em>(governance, security, FinOps; beyond DORA's scope)</em></td>
+<td><em>(governance, security, FinOps; no counterpart among the seven capabilities)</em></td>
 <td>6. Governance, security, risk &amp; controls</td>
 </tr>
 <tr>
@@ -1556,11 +1556,11 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </tr>
 </tbody>
 </table></div>
-<p>Three departures from DORA's structure: Dimension 3 is the management layer no DORA capability covers, Dimension 4 is the human-capability layer DORA treats as context, and Dimension 8 elevates user-centric focus from a capability to a dimension because <a href="https://dora.dev/capabilities/user-centric-focus/" target="_blank" rel="noopener noreferrer">DORA closes its 2025 report on it</a>, finding that without it AI adoption can harm team performance rather than help it.</p>
+<p>Three departures from DORA's structure: Dimension 3 is the management layer none of the seven capabilities covers, Dimension 4 is the human-capability layer the model treats as context, and Dimension 8 elevates user-centric focus from a capability to a dimension because <a href="https://dora.dev/capabilities/user-centric-focus/" target="_blank" rel="noopener noreferrer">DORA closes its 2025 report on it</a>, finding that without it AI adoption can harm team performance rather than help it.</p>
 <h3 id="the-scorecard-self-assessment">The scorecard (self-assessment)</h3>
 <p>Score each dimension L1-L4, and allow no score without an observed artefact and a metric. A rating with no artefact behind it I'd treat as an opinion. The confidence column in the scorecard below records whether the same evidence would produce the same score in someone else's hands, high when the artefact and the metric are both in hand and low when either is partial or the owner is inferred.</p>
 <p>Run it in whatever format suits: a facilitated workshop, an assessment by the enabling team, or per-team self-scores reviewed together. Three questions per dimension in each case: show me (the artefact), measure it (the number), who owns it (the name). The score is the highest level you can evidence rather than the level anyone believes. It is a short exercise when the artefacts arrive with their owners, and a stalled one when they do not. For a single team, DORA's own assessment sits well alongside this scorecard: team profiles and value stream mapping (<a href="https://dora.dev/ai/capabilities-model/report/" target="_blank" rel="noopener noreferrer">capabilities model report</a>) find what the team should fix next, while the scorecard asks whether the organisation is ready to scale.</p>
-<p>Score whatever unit shares one delivery system. Divisions running their own platforms, pipelines and governance have their own floors, so score them separately rather than averaging them into one profile.</p>
+<p>I'd score the unit that shares a single delivery system. A division that runs its own platform deserves its own scorecard, and so does the team running the cross-divisional pipelines and governance, because its floor might become its consumers' floor.</p>
 <p>I'd tie re-scoring to every <a class="secref" href="#11-sequencing-roadmap">§11</a> gate, where the executive committee is making its go/no-go call. Additionally, notes from the scoring feed into the next wave's plan.</p>
 <p>The table is a summary. Each dimension also carries a short note: why the evidence reads as that level rather than the one above, what would have to change to move up, and any scope caveats, such as a division assessed or a platform left out. These notes feed the sequencing and roadmap in <a class="secref" href="#11-sequencing-roadmap">§11</a>.</p>
 <p>Self-scores drift optimistic, so name each dimension's tell in advance, the symptom that says the real level sits below the claimed one:</p>
@@ -1722,13 +1722,13 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </svg>
 
 </figure></p>
-<p>Two shapes are worth recognising on sight, and each points at a different fix. The profile above is the first of them:</p>
+<p>Some of the standard shapes include the two below, with opposite fixes. The example above is the first of them:</p>
 <ul>
 <li><strong>Strong engine, no rails</strong>: high on process and platform, low on governance and culture. Speed arrives alongside runaway spend of the kind Uber reported. Fix <a class="secref" href="#6-governance-security-risk-controls">§6</a> (governance, FinOps) and <a class="secref" href="#7-org-people-culture">§7</a> (stance) first.</li>
 <li><strong>Rails, no engine</strong>: high on governance, low on platform and data. The result is safe, compliant and static. Nothing goes wrong, so nothing forces the issue except the missing return: the spend is real and the efficiencies never arrive (<a class="secref" href="#9-value-capture">§9</a>). Fix <a class="secref" href="#2-infrastructure-platform">§2</a> (platform) and <a class="secref" href="#3-data-knowledge-the-contextharness">§3</a> (context) before tightening controls.</li>
 </ul>
 <h3 id="the-c-suite-gate">The C-suite gate</h3>
-<p>Gate the scale-up on a C-suite readiness check, an explicit go/no-go across three lenses. CTO: platform integration, context ownership, eval suites, AI-code provenance, human review, rollback paths. CFO: budget caps, named conversion routes, a cost-per-outcome baseline. COO: an accountable owner per dimension, rollout gates, a capacity-capture decision. The profile is what the gate reads, and <a class="secref" href="#11-sequencing-roadmap">§11</a> places it at the entry to Phase 3.</p>
+<p>Gate the scale-up on a C-suite readiness check, an explicit go/no-go across three lenses. CTO: platform integration, context ownership, eval suites, AI-code provenance, human review, rollback paths. CFO: budget caps, named conversion routes, a cost-per-outcome baseline. COO: an accountable owner per dimension, rollout gates, a capacity-capture decision. The gate takes the profile as the input, with <a class="secref" href="#11-sequencing-roadmap">§11</a> placing it at the entry to Phase 3.</p>
 <p>The owners named throughout this playbook are mostly hats worn by existing people, and only sometimes new heads. The point is one name per artefact rather than a new hire per role.</p>
 <p class="fm"><strong>First moves.</strong></p>
 <ul>
