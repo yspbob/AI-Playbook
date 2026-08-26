@@ -1801,7 +1801,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <p><em>(The case holds only if two things exist: the telemetry to measure the gain (<a class="secref" href="#8-measurement">§8</a>) and the ledger to book the value (<a class="secref" href="#9-value-capture">§9</a>). The swing variable is management behaviour rather than technology (<a class="secref" href="#10-readiness-model-8-dimensions">§10</a>).)</em></p>
 <h3 id="the-model">The model</h3>
 <pre><code>Value per year = engineers × fully-loaded cost × capacity freed × conversion
-Cost per year  = tooling + enabling team + platform + training + instability
+Cost per year  = tooling + enabling team + platform + training + instability + dip
 Net            = value − cost, judged cumulatively over three years
 </code></pre>
 <ul>
@@ -1817,6 +1817,7 @@ Net            = value − cost, judged cumulatively over three years
 <li><strong>Platform</strong>: gateway, observability, retrieval and evals, priced as the AI-specific layer only.</li>
 <li><strong>Training</strong>: cash costs only, facilitation, courseware and compliance.</li>
 <li><strong>Instability</strong> (provisioned): if the rollout raises the change failure rate, it'll result in additional cost. I'd provision it per wave using DORA's formula, deploys × failure-rate delta × recovery hours × cost per hour, and revise it at every financial forecast against <a class="secref" href="#8-measurement">§8</a>'s telemetry. Finance takes a released provision far better than an unplanned cost item.</li>
+<li><strong>J-curve dip</strong> (provisioned): teams can deliver below their pre-AI baseline while adoption beds in. DORA prices the drop directly, staff × salary × drop share × duration, fifteen percent for three months in its sample. I'd provision it per wave alongside instability and release it as <a class="secref" href="#8-measurement">§8</a>'s throughput recovers. The capacity-freed share above nets the drag above baseline, while this line prices any fall below it, so the two never double count.</li>
 </ul>
 <p class="field"><strong>From the field.</strong> The harness is the cost most often under-priced. One project planned the source-data and context work at roughly a quarter of the effort and it ran closer to 60% once the first serious agent was built: context documents, eval suites, decision-history reconstruction and ongoing maintenance. I'd price the harness as a first-class item from day one.</p>
 <h3 id="worked-example-300-engineers-london">Worked example: 300 engineers, London</h3>
@@ -1828,6 +1829,7 @@ Net            = value − cost, judged cumulatively over three years
 <li><strong>Platform</strong>: £72k a year, the AI-specific layer only, with year one at 60%, as with tooling.</li>
 <li><strong>Training</strong>: £510k in year one (£1.7k per engineer: external facilitation, courseware and one-off compliance), £240k after (£0.8k per engineer: refreshers and materials).</li>
 <li><strong>Instability</strong>: the provision is yours to set in the workbook from your own deploy and failure numbers. This example shows it fully released.</li>
+<li><strong>J-curve dip</strong>: same treatment, the provision is yours to set, shown fully released here. The example's year one carries the adoption drag inside the reduced freed share.</li>
 <li><strong>Total</strong>: £2.68M in year one, £2.42M at run rate. 5.6% of payroll, falling to 5.1%.</li>
 </ul>
 <p>Surveyed AI budgets look smaller (DX: nearly half of leaders set aside 1-3% of the engineering budget) as they count only the tool invoice. On that scope our tooling line is 2.4%. The rest of the stack is mostly people cost (the enabling team and training), which is not accounted for in the tools budget.</p>
