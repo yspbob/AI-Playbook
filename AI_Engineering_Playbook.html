@@ -248,10 +248,9 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <li><strong>State a clear stance.</strong> It reduces both timid under-use and shadow-use.</li>
 </ul>
 <blockquote>
-<p><strong>The strongest objection.</strong> Model capability is compounding fast enough that this machinery can look like over-investment in a temporary problem. Agent harnesses already walk a codebase live, and AGENTS.md is now a cross-tool standard the major coding agents read by default (adoption evidence in <a class="secref" href="#3-data-knowledge-the-contextharness">§3</a>'s sources). Given the pace the AI field is moving at, the concern is genuine. So I focused on the buy options for the fact-gathering and drafting stages, starting them at the entry rung (<a class="secref" href="#4-the-interpretation-layer">§4</a>).</p>
-<p>I'd argue that a company's private decisions don't sit in a vendor model's training data, and certifying them still takes a company expert.</p>
-<p>Also, in regulated industries the required control and audit generally rise with autonomy, and no model release lowers that obligation. Faster generation also makes review capacity and value conversion bind tighter (<a class="secref" href="#5-process-delivery">§5</a>, <a class="secref" href="#9-value-capture">§9</a>).</p>
-<p>More capable agents produce more output, faster, and the operating model (conversion, review and cost control) decides whether the extra capacity turns into value. That said, my case shrinks if vendors ship certified organisational decision memory that auditors accept.</p>
+<p><strong>The strongest objection.</strong> Model capabilities are progressing fast enough that this machinery can look like over-investment in a temporary problem. Agent harnesses already walk a codebase live, and AGENTS.md is now a cross-tool standard the major coding agents read by default (adoption evidence in <a class="secref" href="#3-data-knowledge-the-contextharness">§3</a>'s sources). The concern is genuine, so, for instance, I focused on the buy options for the fact-gathering and drafting stages, starting them at the entry rung (<a class="secref" href="#4-the-interpretation-layer">§4</a>).</p>
+<p>The rest I'd defend. A company's private decisions don't sit in a vendor model's training data, and certifying them still takes a company expert. In regulated industries the required control and audit rise with autonomy, and that doesn't move with model releases.</p>
+<p>That said, my case shrinks if vendors ship certified organisational decision memory that auditors accept.</p>
 </blockquote>
 <h3 id="sources-1">Sources (<a class="secref" href="#1-thesis-operating-principles">§1</a>)</h3>
 <details>
@@ -301,9 +300,9 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <p><em>(Builds </em><em>Dimension 1</em><em> of the <a class="secref" href="#10-readiness-model-8-dimensions">§10</a> matrix).</em></p>
 <p><em><strong>Scope:</strong> regulated default, with the lighter cloud-native option alongside. Products as of July 2026, and volatile.</em></p>
 <h3 id="what-platform-means-for-ai">What "platform" means for AI</h3>
-<p>The platform offers self-service <em>golden paths</em> that encode good defaults. AI multiplies code volume, tool sprawl and variable spend all at once, which makes governing per developer impractical. The platform is the layer at which agents are made both productive and safe, the same job it already does for engineers. The technology is moving too fast to over-standardise practices, tools and methods: that limits both the gains and the ability to adapt. I'd standardise the rails and leave room to change the practice running on them.</p>
+<p>The platform offers self-service golden paths, which are ready-made routes with the good defaults built in. AI multiplies code volume, tool sprawl and variable spend, making governance per developer impractical and raising the need for a proper development platform. The platform does the same job for agents as it does for engineers, making their work productive and safe. As the technology is progressing fast, I'd standardise the rails and leave room to experiment on top of them, folding the experiments that work back into the platform.</p>
 <h3 id="three-classes-of-agents">Three classes of agents</h3>
-<p>I split agents into three risk classes. They differ by where the human sits, an organisational choice, rather than by the technology, which converges across all three.</p>
+<p>I split agents into three risk classes, which differ by where the human sits rather than by the technology. The technology converges across all three.</p>
 <ul>
 <li><strong>Class 1, inline assist.</strong> Autocomplete and chat in the IDE. A human accepts every change.</li>
 <li><strong>Class 2, supervised agents.</strong> A human owns every merge regardless of whether an engineer runs the session or delegates it to an agent. Human-led sessions spend under the engineer's identity and team budget, delegated runs under a bot identity on platform runtime. Block (the fintech behind Square and Cash App) runs both modes: ~95% of its engineers use AI, and humans step in at review (Block). At Goldman Sachs engineers supervise Devin's runs and answer for the results. The programme went from pilot to production across its technology division by August 2026 (Fortune, American Banker).</li>
@@ -385,6 +384,7 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </figure></p>
 <p>The platform decomposes into eight planes.</p>
 <ul>
+<li><strong>Identity &amp; access (who, and what, is allowed in).</strong> Each <strong>agent gets its own identity</strong>: its permissions, its budget and its audit record. Extend your existing directory (Entra added agent identities in 2025, Okta in 2026), and grant short-lived, scoped access rather than standing keys.</li>
 <li><strong>Developer experience (IDP: the internal developer portal &amp; golden paths).</strong> Self-service portal where humans and agents request capability (Backstage, Port, Cortex). The service catalogue is agent-readable via MCP: agents use it to find what already exists and build on it.</li>
 <li><strong>Agentic tools (IDE + CLI).</strong> Pair an IDE assistant with a terminal agent for heavy lifting (agent Classes 1-2: Copilot, Cursor, Windsurf, Claude Code, Codex CLI). Unattended runs (delegated Class 2 and all autonomous Class 3 agents) run in a sandboxed, centrally orchestrated runtime.</li>
 <li><strong>Context (MCP + retrieval).</strong> Agents search their working repo just-in-time. The code-search index and the managed retrieval layer are exposed as MCP tools. Substance and freshness are covered in <a class="secref" href="#3-data-knowledge-the-contextharness">§3</a>.</li>
@@ -392,7 +392,6 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 <li><strong>Assurance (tests + evals + CI gates).</strong> CI tests assure the product. Evals do the same job for the AI system that produces it. Both ship as golden-path defaults. (Langfuse, Braintrust, Promptfoo).</li>
 <li><strong>Observability &amp; cost telemetry.</strong> Tracing, token and cost attribution, and quality signals (churn and change failure rates (<a class="secref" href="#8-measurement">§8</a>), eval scores) feed dashboards and the feedback loop. (Langfuse, Datadog).</li>
 <li><strong>Model plane (in your tenancy by default).</strong> In a regulated environment, models run in your own cloud (Bedrock or Azure OpenAI in-VNet, the Azure VPC equivalent, or self-hosted via vLLM) with hard data boundaries. Lighter setups could call cloud APIs through the gateway.</li>
-<li><strong>Identity &amp; access (who, and what, is allowed in).</strong> Each <strong>agent gets its own identity</strong>: its permissions, its budget and its audit record. Extend your existing directory (Entra added agent identities in 2025, Okta in 2026), and grant short-lived, scoped access rather than standing keys.</li>
 </ul>
 <p>Governance (RBAC, quotas and provenance) and FinOps (budgets and showback: cost reporting before internal billing) wrap every plane, attached <em>at the platform</em> rather than per team (<a class="secref" href="#6-governance-security-risk-controls">§6</a>). The input is the persona: a pre-wired bundle of identity, golden paths, tools, context, limits and gates.</p>
 <p class="field"><strong>From the field.</strong> In 2025 I ran an AI transformation of business operations at a mid-sized professional services organisation. The firm signed fewer than ten master services agreements a year, plus tens of amendments and statements of work. Legal sat at group level, outside the firm's direct control, so thorough redline cycles ran weeks or months, with leadership doing the convincing on both its own and the client side. Many contention points recurred from earlier contracts. We built a paralegal agent to port those past decisions where the business context aligned, and in some cases it cut the redline cycle by multiples. Its evals ran continuously. We backtested against contracts the firm had already signed: the agent reviewed a document it had never seen (held out of the knowledge base), and its findings were scored against what our and the counterparty's Legal had actually settled. Every knowledge system change re-ran the pack. The gaps never stopped appearing, as new counterparties kept bringing clause patterns the knowledge base hadn't seen. Someone had to catch them and update the knowledge base, permanently. I'd budget for evals as a standing operation, not a project phase. Every new signed document was added to the knowledge base or the eval pack.</p>
@@ -508,18 +507,18 @@ body.drawer-open{overflow:hidden;}body.drawer-open #drawer{display:block;}
 </thead>
 <tbody>
 <tr>
-<td>Developer portal (IDP)</td>
-<td>Self-service front door + golden paths</td>
-<td>Backstage (self-host)</td>
-<td>Roadie / Port</td>
-<td>Spotify (creator), Monzo, American Airlines</td>
-</tr>
-<tr>
 <td>Identity &amp; access</td>
 <td>Who/what's allowed; budgets; audit</td>
 <td>Okta / Entra (+ agent IDs)</td>
 <td>same</td>
 <td>Nasdaq, JetBlue (Okta)</td>
+</tr>
+<tr>
+<td>Developer portal (IDP)</td>
+<td>Self-service front door + golden paths</td>
+<td>Backstage (self-host)</td>
+<td>Roadie / Port</td>
+<td>Spotify (creator), Monzo, American Airlines</td>
 </tr>
 <tr>
 <td>Agentic IDE / CLI</td>
