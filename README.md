@@ -11,6 +11,6 @@ A practical playbook for converting AI capability into governed engineering valu
 
 ## Author and license
 
-Written by [Yaroslav Pavolotskyi](https://www.linkedin.com/in/yaroslavpavolotsky). The set reflects the author's thinking, frameworks, field experience and recommendations; AI supported the research and editorial process.
+Written by [Yaroslav Pavolotskyi](https://www.linkedin.com/in/yaroslavpavolotsky). Developed with feedback from [Nathen Harvey](https://linkedin.com/in/nathen), DORA Lead at Google Cloud, who reviewed the readiness model chapter. The set reflects the author's thinking, frameworks, field experience and recommendations; AI supported the research and editorial process.
 
 Licensed under [Creative Commons Attribution 4.0](LICENSE): share and adapt freely, with credit.

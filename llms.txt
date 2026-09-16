@@ -3,7 +3,9 @@
 > An open, sourced playbook on converting AI capability into governed engineering
 > value in mid-size engineering organisations: platform, context and knowledge,
 > governance, measurement, readiness, sequencing and the business case.
-> Written by Yaroslav Pavolotskyi. Version 1.0, August 2026. Licensed CC BY 4.0.
+> Written by Yaroslav Pavolotskyi. Developed with feedback from Nathen Harvey,
+> DORA Lead at Google Cloud, who reviewed the readiness model chapter
+> (https://linkedin.com/in/nathen). Version 1.0, August 2026. Licensed CC BY 4.0.
 
 ## Core content
 
