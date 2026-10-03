@@ -5,7 +5,7 @@
 > governance, measurement, readiness, sequencing and the business case.
 > Written by Yaroslav Pavolotskyi. Developed with feedback from Nathen Harvey,
 > DORA Lead at Google Cloud, who reviewed the readiness model chapter
-> (https://linkedin.com/in/nathen). Version 1.0, August 2026. Licensed CC BY 4.0.
+> (https://linkedin.com/in/nathen). Version 1.0, updated October 2026. Licensed CC BY 4.0.
 
 ## Core content
 
