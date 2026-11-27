@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://yspbob.github.io/AI-Playbook/Twelve_Decisions.html">
 <meta property="og:image" content="https://yspbob.github.io/AI-Playbook/og_deck.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Twelve decisions that decide whether AI engineering pays","author":{"@type":"Person","name":"Yaroslav Pavolotskyi","url":"https://www.linkedin.com/in/yaroslavpavolotsky"},"datePublished":"2026-08-14","dateModified":"2026-10-03","license":"https://creativecommons.org/licenses/by/4.0/","url":"https://yspbob.github.io/AI-Playbook/Twelve_Decisions.html","image":"https://yspbob.github.io/AI-Playbook/og_deck.png","isPartOf":{"@type":"CreativeWork","name":"AI Engineering Operating Model Playbook","url":"https://yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Twelve decisions that decide whether AI engineering pays","author":{"@type":"Person","name":"Yaroslav Pavolotskyi","url":"https://www.linkedin.com/in/yaroslavpavolotsky"},"datePublished":"2026-08-14","dateModified":"2026-11-27","license":"https://creativecommons.org/licenses/by/4.0/","url":"https://yspbob.github.io/AI-Playbook/Twelve_Decisions.html","image":"https://yspbob.github.io/AI-Playbook/og_deck.png","isPartOf":{"@type":"CreativeWork","name":"AI Engineering Operating Model Playbook","url":"https://yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html"}}</script>
 
 
 <script id="deck" type="application/json">
@@ -25,7 +25,7 @@
       "kicker": "A companion to the [[AI Engineering Operating Model Playbook]]",
       "title": "Twelve decisions\nthat decide whether\nAI engineering pays",
       "lede": "They run from platform architecture to organisation design to the business case. Most of them get made early, quietly, and by default.",
-      "footnote": "The dots above say what kind of claim each number is. The workbook behind the case is open, illustrative and directional rather than a full P&L, and the field notes are mine with names removed. Competent tool choice and implementation are assumed throughout and are not covered here. August 2026."
+      "footnote": "The dots above say what kind of claim each number is. The workbook behind the case is open, illustrative and directional rather than a full P&L, and the field notes are mine with names removed. Competent tool choice and implementation are assumed throughout and are not covered here. The defaults are for a regulated, mid-size engineering organisation. Yaroslav Pavolotskyi, August 2026, updated November 2026."
     },
     {
       "type": "stat",
@@ -40,7 +40,7 @@
         },
         {
           "number": "7.76%",
-          "label": "throughput gain across 400 companies"
+          "label": "pull-request throughput gain across 400 companies"
         },
         {
           "number": "37%",
@@ -141,7 +141,7 @@
       "why": "AI value follows a J-curve: delivery dips before it climbs. DORA names that dip the **tuition cost** and warns that leaders who misread it as failure pull the funding. A baseline is what tells them apart.",
       "evidence": "published",
       "source": "DORA, The ROI of AI-assisted Software Development, 2026",
-      "footnote": "The cost is low: the metrics are ones §8 already asks for, and the baseline is each team's pre-onboarding period."
+      "footnote": "The cost is low: the metrics are ones §8 already asks for. The baseline is taken team by team, so a team that hasn't started with AI yet can still be measured first."
     },
     {
       "type": "decision",
@@ -190,10 +190,10 @@
       "title": "Who decides the output\nis good enough, and when?",
       "usually": "The reviewer decides, case by case, against their own read of what good looks like.",
       "instead": "The standards written down, served to the agent before it works, and checked automatically after.",
-      "why": "Two-thirds of developers name output that is **almost right, but not quite** as their biggest frustration. Almost right is a judgement about whether something fits this estate, and an agent cannot make it without knowing what the estate has already decided.",
+      "why": "The biggest frustration with AI tools, cited by 66% of developers, is AI solutions that are **almost right, but not quite**. Almost right is a judgement about whether something fits this estate, and an agent cannot make it without knowing what the estate has already decided.",
       "evidence": "published",
       "source": "Stack Overflow Developer Survey 2025",
-      "footnote": "The playbook calls this assembly a proposal, not yet proven in production. The entry rung is small: a rules file, an ADR set, and structural checks in CI."
+      "footnote": "The playbook calls this a proposal, not yet proven in production. The entry rung is small: a rules file, a set of architecture decision records and structural checks in CI. The automatic checks run first, and a person still approves the merge."
     },
     {
       "type": "decision",
@@ -202,7 +202,7 @@
       "refSlug": "6-governance-security-risk-controls",
       "title": "What can you see, cap and stop?",
       "usually": "A policy document, intended to work as a control.",
-      "instead": "A gateway every call passes through, with approved models behind it, a spend cap that has an exception path, and a kill-switch someone has tested.",
+      "instead": "A gateway in front of every call that can route through it, with approved models behind it, a spend cap that has an exception path, and a kill-switch someone has tested.",
       "why": "At one organisation, AI use was banned at group level. Every person I spoke to used it anyway. What the ban produced was **usage with no visibility, no telemetry and no control**. Even the money is hard to see: industry-wide, FinOps practitioners rank granular monitoring of AI spend as their top missing tool.",
       "evidence": "firsthand",
       "source": "anonymised; State of FinOps 2026",
@@ -216,7 +216,7 @@
       "title": "Train people to prompt,\nor to supervise?",
       "usually": "Prompt technique. How to ask the tool for a better answer.",
       "instead": "Supervision. How to review generated work, when to reject it, and what must be verified rather than trusted.",
-      "why": "Goldman Sachs' CIO frames these as **management skills**: describe, delegate, supervise. He calls delegating to an agent you cannot supervise a recipe for disaster. Reviewing work you did not write, at volume, is a different skill from writing it.",
+      "why": "Goldman Sachs' CIO frames the skill as **describe, delegate, supervise**. He calls delegating to an agent you cannot supervise a recipe for disaster. Reviewing work you did not write, at volume, is a different skill from writing it.",
       "evidence": "published",
       "source": "Marco Argenti, CIO, Goldman Sachs, July 2025",
       "footnote": "Prompting shapes how you ask. It does not set what the work should draw on, what it must satisfy, or how you would know it is done."
@@ -258,7 +258,7 @@
       "why": "Bain finds teams using AI assistants see gains of **10% to 15%**, and that the time saved is often not redirected toward higher-value work.",
       "evidence": "published",
       "source": "Bain, From Pilots to Payoff, 2025",
-      "footnote": "Bain's evidence is assistant-era, and agents free more time. The pull is familiar from the field: in a project I ran in 2017, time formally protected at 50% was squeezed to 10% by business pressure, and winning it back took effort each time."
+      "footnote": "Bain's 2026 report puts the median agent-era gain at a self-reported 20%, with median engineering cost down only 8%. The pull is familiar from the field: in a project I ran in 2017, time formally protected at 50% was squeezed to 10% by business pressure, and winning it back took effort each time."
     },
     {
       "type": "decision",
@@ -268,7 +268,7 @@
       "title": "What do you promise\nfor year one?",
       "usually": "Payback inside the first year, with licences standing in for the cost of the programme.",
       "instead": "A J-curve with the dip in the budget from the start. Say which year you expect breakeven, and let the gates test it.",
-      "why": "The cost is a five-line stack: licences and tokens, the enabling team (where §3's context work lands), the platform, training, and instability. Waves spread it, so year one carries partial coverage against the full build cost.",
+      "why": "The cost is a six-line stack: licences and tokens, the enabling team (where §3's context work lands), the platform, training, instability and the dip. Teams come on in waves, so year one carries partial coverage against the full build cost.",
       "evidence": "reasoned",
       "source": "follows from §12, where the stack is built bottom-up",
       "footnote": "The workbook works one example through at 300 engineers. Replace every input with your own before anyone quotes a number from it."
@@ -281,7 +281,7 @@
       "title": "What would make you stop?",
       "usually": "The programme has a start date and a budget. The stopping decision gets made reactively, when money or patience runs out.",
       "instead": "Gates at every phase and every wave, each with numbers to clear. A missed gate gets one of three answers agreed with the CFO in advance: hold, shrink, or kill.",
-      "why": "Gartner expects over **40%** of agentic AI projects to be cancelled by end-2027, on escalating costs, unclear business value or inadequate risk controls. All three show up at a gate while the programme is still cheap to change.",
+      "why": "Gartner predicted in June 2025 that over **40%** of agentic AI projects would be cancelled by end-2027, on escalating costs, unclear business value or inadequate risk controls. All three show up at a gate while the programme is still cheap to change.",
       "evidence": "published",
       "source": "Gartner, June 2025",
       "footnote": "A programme that cannot stop is not governed, it is funded. The harder half is knowing when not to stop: the classic failure is pulling funding at the bottom of the dip."
@@ -321,7 +321,7 @@
       "lede": "The full argument behind each of the twelve, and an illustrative business case to rebuild with your own headcount and payroll. The workbook downloads from §12, so the assumptions arrive before the numbers.",
       "why": "**Every claim is labelled by what kind of claim it is. That distinction is the difference between a business case and a hope.**",
       "url": "yspbob.github.io/AI-Playbook/AI_Engineering_Playbook.html",
-      "footnote": "Written by Yaroslav Pavolotskyi, linkedin.com/in/yaroslavpavolotsky. Developed with feedback from Nathen Harvey, DORA Lead at Google Cloud, who reviewed the readiness model chapter (linkedin.com/in/nathen). Market data current as of August 2026 and dated in place, because all of it moves. Appendix A of the playbook carries the full market snapshot (August 2026, partly updated October 2026). The playbook's closing section, How this playbook was made, covers the authorship and composition of the whole set."
+      "footnote": "Written by Yaroslav Pavolotskyi, linkedin.com/in/yaroslavpavolotsky. Developed with feedback from Nathen Harvey, then DORA Lead at Google Cloud, who reviewed the readiness model chapter (linkedin.com/in/nathen). Market data current as of August 2026 and dated in place, because all of it moves. Appendix A of the playbook carries the full market snapshot (August 2026, partly updated October and November 2026). The playbook's closing section, How this playbook was made, covers the authorship and composition of the whole set."
     }
   ]
 }
